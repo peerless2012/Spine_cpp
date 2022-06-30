@@ -50,7 +50,7 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE := Spine_static
 
-LOCAL_MODULE_FILENAME := libSpine
+#LOCAL_MODULE_FILENAME := libSpine
 
 SPINE_PATH := spine-cpp
 
@@ -59,8 +59,8 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/$(SPINE_PATH)/include
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_C_INCLUDES)
 
 LOCAL_SRC_FILES := \
-		$(subst subst $(LOCAL_PATH)/,, \
-		$(wildcard $(LOCAL_PATH)/$(SPINE_PATH)/src/spine/*.cpp) \
+		$(subst $(LOCAL_PATH)/,, \
+			$(wildcard $(LOCAL_PATH)/$(SPINE_PATH)/src/spine/*.cpp) \
 		)
 
 LOCAL_CFLAGS += -DGL_GLEXT_PROTOTYPES -Wall -Wextra -pedantic -std=c89
